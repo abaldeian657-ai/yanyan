@@ -1,0 +1,414 @@
+
+    :root {
+      --nav-bg: #2b2b2b;
+      --body-bg: #000;
+      --text: #fff;
+      --yellow: #c8c400;
+      --gray-text: #ccc;
+      --input-line: #888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--body-bg);
+      color: var(--text);
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--nav-bg);
+      padding: 26px 48px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      transition: color .2s;
+    }
+    nav a:hover, nav a.active { color: var(--text); font-weight: 700; }
+
+    /* ── SECTIONS ── */
+    section { min-height: calc(100vh - 90px); display: none; }
+    section.active { display: flex; flex-direction: column; }
+
+    /* ══════════════════════════════
+       HOME
+    ══════════════════════════════ */
+    #home {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .home-hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 120px 60px 180px;
+    }
+
+    .home-text .first-name {
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 900;
+      letter-spacing: .03em;
+      line-height: 1.1;
+    }
+    .home-text .last-name {
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 900;
+      letter-spacing: .03em;
+      line-height: 1.1;
+      margin-left: clamp(40px, 6vw, 90px);
+    }
+    .home-text .dev-title {
+      font-size: clamp(14px, 2vw, 22px);
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+      letter-spacing: .14em;
+      color: var(--yellow);
+      margin-top: 18px;
+    }
+
+    .hero-photo {
+      width: clamp(180px, 20vw, 270px);
+      height: clamp(200px, 24vw, 310px);
+      object-fit: cover;
+      filter: grayscale(100%) brightness(.75);
+      flex-shrink: 0;
+    }
+
+    /* home footer */
+    .home-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 48px 30px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .social-icons { display: flex; gap: 10px; }
+    .sicon {
+      width: 50px; height: 50px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .sicon svg { width: 28px; height: 28px; fill: #fff; }
+    .li-bg  { background: #0a66c2; }
+    .ig-bg  { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .fb-bg  { background: #1877f2; }
+
+    .home-contact { display: flex; gap: 80px; }
+    .home-contact .block h3 {
+      color: var(--yellow);
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .home-contact .block p {
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ══════════════════════════════
+       ABOUT ME
+    ══════════════════════════════ */
+    #about { padding: 70px 160px 60px; }
+
+    .about-bio {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-family: 'Georgia', serif;
+      line-height: 1.75;
+      max-width: 1100px;
+    }
+
+    .latest-work-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--yellow);
+      font-family: Arial, sans-serif;
+      margin-top: 52px;
+      margin-bottom: 24px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .work-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: brightness(.85);
+    }
+
+    /* ══════════════════════════════
+       SKILLS
+    ══════════════════════════════ */
+    #skills { padding: 70px 160px 60px; }
+
+    .skills-bio {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-family: 'Georgia', serif;
+      line-height: 1.75;
+      max-width: 1100px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 52px;
+    }
+
+    .skills-col .col-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--yellow);
+      font-family: Arial, sans-serif;
+      margin-bottom: 18px;
+    }
+    .skills-col .col-label .diamond {
+      width: 12px; height: 12px;
+      background: #4ab3f4;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .skills-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+      margin-bottom: 14px;
+    }
+
+    .skills-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skills-col ul li {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      padding: 5px 0 5px 16px;
+      position: relative;
+      color: #ddd;
+    }
+    .skills-col ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      font-size: 20px;
+      line-height: 1;
+      top: 4px;
+    }
+
+    .tools-col .col-label {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      margin-bottom: 18px;
+      font-weight: 400;
+    }
+
+    /* ══════════════════════════════
+       EXPERIENCE
+    ══════════════════════════════ */
+    #experience { padding: 70px 160px 60px; }
+
+    .exp-bio {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-family: 'Georgia', serif;
+      line-height: 1.85;
+      max-width: 1050px;
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .exp-block .label {
+      font-size: 13px;
+      letter-spacing: .12em;
+      color: var(--yellow);
+      font-family: Arial, sans-serif;
+      margin-bottom: 22px;
+    }
+
+    .exp-block .value {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ══════════════════════════════
+       CONTACT
+    ══════════════════════════════ */
+    #contact { padding: 60px 160px 0; justify-content: space-between; }
+
+    .contact-top { flex: 1; }
+
+    .contact-heading {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+    .contact-heading h2 {
+      font-size: 26px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+    }
+    .contact-heading .line {
+      flex: 0 0 200px;
+      height: 1px;
+      background: var(--text);
+    }
+
+    .contact-desc {
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+      max-width: 1000px;
+      margin-bottom: 48px;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 80px;
+      max-width: 1100px;
+    }
+
+    .form-left, .form-right { display: flex; flex-direction: column; gap: 28px; }
+
+    .field { display: flex; align-items: flex-end; gap: 16px; }
+    .field label {
+      font-size: 20px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+      color: #aaa;
+      min-width: 60px;
+    }
+    .field input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--input-line);
+      color: #fff;
+      font-size: 16px;
+      padding: 4px 0;
+      outline: none;
+      font-family: Arial, sans-serif;
+     
+    }
+    .field input:focus { border-bottom-color: var(--yellow); }
+
+    .message-field { display: flex; flex-direction: column; gap: 8px; }
+    .message-field label {
+      font-size: 20px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+      color: #aaa;
+    }
+    .message-field textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--input-line);
+      color: #fff;
+      font-size: 15px;
+      padding: 6px 0;
+      outline: none;
+      font-family: Arial, sans-serif;
+      resize: none;
+      min-height: 20px;
+    }
+    .message-field textarea:focus { border-bottom-color: var(--yellow); }
+
+    .send-btn {
+      align-self: between;
+      background: transparent;
+      border: none;
+      color: #aaa;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: color .2s;
+      
+    }
+    .send-btn:hover { color: var(--yellow); }
+
+    /* contact footer */
+    .contact-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0 30px;
+      border-top: 1px solid #1a1a1a;
+      margin-top: 40px;
+    }
+
+    .contact-footer .cf-right { display: flex; gap: 80px; }
+    .cf-block h3 {
+      color: var(--yellow);
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .cf-block a, .cf-block p {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .cf-block p { text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { gap: 20px; padding: 20px 24px; flex-wrap: wrap; }
+      nav a { font-size: 15px; }
+
+      .home-hero { padding: 50px 24px; flex-direction: column; align-items: flex-start; gap: 30px; }
+      .hero-photo { width: 180px; height: 210px; }
+      .home-footer { flex-direction: column; gap: 20px; align-items: flex-start; padding: 20px 24px; }
+      .home-contact { gap: 30px; }
+
+      #about, #skills, #experience, #contact { padding: 40px 24px 40px; }
+
+      .work-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; gap: 24px; }
+
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-heading .line { flex: 0 0 80px; }
+      .contact-footer { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .contact-footer .cf-right { gap: 24px; }
+    }
+
+    @media (max-width: 560px) {
+      .home-text .first-name { font-size: 36px; }
+      .home-text .last-name { font-size: 42px; margin-left: 30px; }
+      .home-text .dev-title { font-size: 13px; }
+    }
